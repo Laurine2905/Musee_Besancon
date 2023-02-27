@@ -17,11 +17,12 @@ public class Salle {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Salle_id;
 
-    // Nom de la catégorie
+    // Nom de la catégorie = OBLIGATOIRE
     @Column(nullable = false, unique=true)
     @NonNull
     private String Salle_nom;
 
+// una salle contient 0 ou plusieurs objet -> liste
     @OneToMany(mappedBy="salle")
     @ToString.Exclude // On ne veut pas inclure la liste des objets dans le toString
     private List<Objet> objets = new ArrayList<>();

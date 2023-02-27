@@ -17,19 +17,21 @@ public class Categorie {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Categorie_id;
 
-    // Nom de la catégorie
+    // Nom de la catégorie = OBLIGATOIRE
     @Column(nullable = false, unique=true)
     @NonNull
     private String Categorie_nom;
 
+// description de la categorie
     @Column(nullable = true, unique=true)
     private String Categorie_description;
 
-    //Photo trouvée via un URL
+    //Photo trouvée via un URL = OBLIGATOIRE
     @Column(nullable = false, unique=true)
     @NonNull
     private String Categorie_photo;
 
+// il y a 0* objets dans une categorie
     @OneToMany(mappedBy="categorie")
     @ToString.Exclude // On ne veut pas inclure la liste des objets dans le toString
     private List<Objet> objets = new ArrayList<>();

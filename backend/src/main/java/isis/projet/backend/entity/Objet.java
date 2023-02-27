@@ -48,4 +48,9 @@ public class Objet {
     @NonNull
     @ManyToOne(optional = false) // obligatoire, la clé étrangère ne doit pas être nulle
     Categorie categorie;
+
+    // clé étrangere salle = OBLIGATOIRE
+    @NonNull
+    @ManyToOne(optional = false) 
+    Salle salle;
 }

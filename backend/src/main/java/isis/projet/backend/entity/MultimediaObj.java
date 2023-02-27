@@ -14,6 +14,7 @@ public class MultimediaObj {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer MultimediaCat_id;
 
+    // description complémentaire de l'objet 
     @Column(nullable = true, unique=true)
     private String descriptionObj;
 
@@ -28,4 +29,9 @@ public class MultimediaObj {
     //Video trouvée via un URL Youtube
     @Column(nullable = true, unique=true)
     private String URL_videoObj;
+
+    // clé étrangere objet = OBLIGATOIRE
+    @NonNull
+    @ManyToOne(optional = false) 
+    Objet objet;
 }

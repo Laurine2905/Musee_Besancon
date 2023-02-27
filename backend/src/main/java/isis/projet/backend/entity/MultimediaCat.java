@@ -14,6 +14,7 @@ public class MultimediaCat {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer MultimediaCat_id;
 
+    // description complémentaire de la categorie
     @Column(nullable = true, unique=true)
     private String descriptionCat;
 
@@ -28,4 +29,9 @@ public class MultimediaCat {
     //Video trouvée via un URL Youtube
     @Column(nullable = true, unique=true)
     private String URL_videoCat;
+
+    // clé étrangere categorie = OBLIGATOIRE
+    @NonNull
+    @ManyToOne(optional = false)
+    Categorie categorie;
 }
