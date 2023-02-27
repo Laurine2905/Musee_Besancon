@@ -10,6 +10,10 @@ import java.util.List;
 
 public interface CategorieRepository extends JpaRepository<Categorie, Integer> {
 
-// Liste des objets dans une catégorie
-    public List<Tuple> allObjetInCategorie();
+
+// Liste de toutes les categories
+    @Query("select ca.name "
+            + "from Categorie ca"
+            + "order by cou.name")
+    public List<Tuple> allCategorie();
 }
