@@ -12,8 +12,8 @@ public interface CategorieRepository extends JpaRepository<Categorie, Integer> {
 
 
 // Liste de toutes les categories
-    @Query("select ca.name "
-            + "from Categorie ca"
-            + "order by cou.name")
+    @Query("select Categorie_nom "
+            + "from Categorie"
+            + "order by Categorie_nom")
     public List<Tuple> allCategorie();
 }
